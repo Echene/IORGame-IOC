@@ -1,0 +1,22 @@
+Webcam - http://iorgame.com/v/
+
+Interface contrôle:
+http://pagesperso.univ-brest.fr/~bounceur/led/
+Identifiant: aaaa
+Mot de passe : bbbb
+
+Close	- http://iotserver.univ-brest.fr/robot.php?x1=0&x2=0&x3=0
+Open	- http://iotserver.univ-brest.fr/robot.php?x1=1&x2=0&x3=0
+
+Rotation:
+Gauche - http://iotserver.univ-brest.fr/robot.php?x1=0&x2=1&x3=0
+Droite - http://iotserver.univ-brest.fr/robot.php?x1=1&x2=1&x3=0
+
+Hand:
+Avancer	   - http://iotserver.univ-brest.fr/robot.php?x1=0&x2=0&x3=1
+Reculer    - http://iotserver.univ-brest.fr/robot.php?x1=1&x2=0&x3=1
+Monter     - http://iotserver.univ-brest.fr/robot.php?x1=0&x2=1&x3=1
+Descendre  - http://iotserver.univ-brest.fr/robot.php?x1=1&x2=1&x3=1
+
+Allumer  - http://iotserver.univ-brest.fr/on.php
+Eteindre - http://iotserver.univ-brest.fr/off.php
