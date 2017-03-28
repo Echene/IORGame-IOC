@@ -1,0 +1,24 @@
+# Jetbrains IDEs
+.idea/
+*.iml
+target/
+*.class
+
+
+# ANGULARJS
+node_modules
+dist
+.tmp
+bower_components
+debug.log
+coverage
+npm-debug.log
+
+
+# Eclipse (à mettre à jour par quelqu'un qui l'utilise)
+.project
+.classpath
+
+
+*.min.css
+*.jar
