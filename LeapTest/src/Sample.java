@@ -26,7 +26,8 @@ public class Sample {
     
         Listener objListener = new Listener();
         objListener.onConnect(controller);
-       /* public void onConnect(Controller controller) {
+       
+        /* public void onConnect(Controller controller) {
             System.out.println("Connected");
             controller.enableGesture(Gesture.Type.TYPE_SWIPE);
         }*/
