@@ -11,7 +11,7 @@ import com.leapmotion.leap.HandList;
 
 
 public class SampleListener extends Listener {
-
+	
 	public SampleListener() {
 		// TODO Auto-generated constructor stub
 	}
@@ -35,6 +35,9 @@ public class SampleListener extends Listener {
         float touchDistance = pointable.touchDistance();
         Pointable.Zone zone = pointable.touchZone();
 
+        //HttpConection objHttp = new HttpConection();
+
+
         System.out.println("Frame id: " + frame.id()
                        + ", Timestamp: " + frame.timestamp()
                        + ", Hands: " + frame.hands().count()
@@ -44,6 +47,20 @@ public class SampleListener extends Listener {
                        + ", Right: " + hand.isRight()
                        + ", Direction " + hand.direction());
                        //+ ", left: " + leftmost);
+    }
+    
+    public void OpenHand(Controller controller, HttpConection objHttp) {
+    	Frame frame = controller.frame();
+    	Pointable pointable = frame.pointables().frontmost();
+        Boolean condition = pointable.isExtended();
+    	while(condition == true) {
+            try {
+				objHttp.sendPost("x1=0&x2=0&x3=0", "http://iotserver.univ-brest.fr/robot.php?");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    	}
     }
 
 }
