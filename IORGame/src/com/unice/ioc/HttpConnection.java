@@ -8,24 +8,9 @@ import java.net.URL;
 
 public class HttpConnection {
 
-    public static void main(String[] args) throws Exception {
-
-        HttpConnection http = new HttpConnection();
-
-        //System.out.println("Testing 1 - Send Http GET request");
-        //http.sendGet();
-
-        //System.out.println("\nTesting 2 - Send Http POST request");
-        //http.sendPost();
-
-        System.out.println("\nTesting - Send Http POST request");
-        http.testPost();
-
-    }
-
-    private void testPost() throws Exception {
-        String urlParameters = "";
-        URL url = new URL("http://iotserver.univ-brest.fr/off.php");
+    public void sendPost(String fichier, String commande) throws Exception {
+        String urlParameters = commande;
+        URL url = new URL(fichier);
         java.net.URLConnection conn = url.openConnection();
 
         conn.setDoOutput(true);
