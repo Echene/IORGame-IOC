@@ -23,7 +23,7 @@ public class SampleListener extends Listener {
     public void onFrame(Controller controller) {
         Frame frame = controller.frame();
         HandList hands = frame.hands();
-        Hand hand = hands.leftmost();
+        Hand hand = hands.frontmost();
         
         Pointable pointable = frame.pointables().frontmost();
         Vector direction = pointable.direction();
@@ -41,7 +41,8 @@ public class SampleListener extends Listener {
                        + ", Fingers: " + frame.fingers().count()
                        + ", Palm: " + pointable.isExtended()
                        + ", Left: " + hand.isLeft()
-                       + ", Right: " + hand.isRight());
+                       + ", Right: " + hand.isRight()
+                       + ", Direction " + hand.direction());
                        //+ ", left: " + leftmost);
     }
 
