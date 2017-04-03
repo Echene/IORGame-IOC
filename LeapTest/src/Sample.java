@@ -23,9 +23,9 @@ public class Sample {
 
         // Remove the sample listener when done
         controller.removeListener(listener);
-    
         Listener objListener = new Listener();
         objListener.onConnect(controller);
+        objListener.onFrame(controller);
        /* public void onConnect(Controller controller) {
             System.out.println("Connected");
             controller.enableGesture(Gesture.Type.TYPE_SWIPE);
