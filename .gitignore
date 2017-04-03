@@ -18,7 +18,10 @@ npm-debug.log
 # Eclipse (à mettre à jour par quelqu'un qui l'utilise)
 .project
 .classpath
+<<<<<<< HEAD
 .metadata
+=======
+>>>>>>> origin/master
 
 
 *.min.css

@@ -19,7 +19,7 @@ public class LeapArm {
 		// Instanciation de la classe RS232
 		ConnectRS232 cr232 = new ConnectRS232();
 		
-		cr232.connect("COM4"); // Veuillez indiquer le port de comunication... ex:"COM4"
+		//cr232.connect("COM4"); // Veuillez indiquer le port de comunication... ex:"COM4"
 		
 		// Instanciation des classes LeapMotion 
     	LeapListener listener = new LeapListener();
