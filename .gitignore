@@ -18,6 +18,7 @@ npm-debug.log
 # Eclipse (à mettre à jour par quelqu'un qui l'utilise)
 .project
 .classpath
+.metadata
 
 
 *.min.css
