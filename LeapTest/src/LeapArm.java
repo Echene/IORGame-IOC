@@ -28,16 +28,6 @@ public class LeapArm {
         // Initialisation du THREAD LeapMotion
         controller.addListener(listener);
 
-        // Keep this process running until Enter is pressed
-        System.out.println("Press Enter to quit...");
-        
-        try {
-            System.in.read();
-        } 
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-
         // Destruction du THREAD LeapMotion
         controller.removeListener(listener);
 	}

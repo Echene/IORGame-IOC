@@ -30,5 +30,7 @@ public class HttpConection {
         writer.close();
         reader.close();
     }
+    
+
 
 }

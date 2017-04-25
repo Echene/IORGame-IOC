@@ -1,4 +1,6 @@
+import java.io.IOException;
 import java.util.ResourceBundle.Control;
+import java.util.concurrent.TimeUnit;
 
 import com.leapmotion.leap.Controller;
 import com.leapmotion.leap.Finger;
@@ -37,7 +39,7 @@ public class SampleListener extends Listener {
 
         //HttpConection objHttp = new HttpConection();
 
-
+        /*
         System.out.println("Frame id: " + frame.id()
                        + ", Timestamp: " + frame.timestamp()
                        + ", Hands: " + frame.hands().count()
@@ -46,8 +48,43 @@ public class SampleListener extends Listener {
                        + ", Left: " + hand.isLeft()
                        + ", Right: " + hand.isRight()
                        + ", Direction " + hand.direction());
-                       //+ ", left: " + leftmost);
-    }
+                       //+ ", left: " + leftmost);*/
+        // Faire un Sleep pour exectuer l'action       
+			
+        try {
+			TimeUnit.SECONDS.sleep(3);
+			 HttpConection objHttp = new HttpConection();
+		        if (pointable.isExtended() == true) {
+		    	   System.out.println("Poignée ouvert");  	  
+		    	   try {
+					objHttp.sendPost("http://iotserver.univ-brest.fr/robot.php", "?x1=0&x2=0&x3=0");
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+		       }else if (pointable.isExtended() == false){
+		    	   System.out.println("Poignée fermer");
+		    	   try {
+					objHttp.sendPost("http://iotserver.univ-brest.fr/robot.php", "?x1=1&x2=0&x3=0");
+					}catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+		       }
+			}catch (Exception e) {
+				// TODO: handle exception
+			} 
+
+	       
+
+        /*
+        while(pointable.isExtended() == false)
+        {
+        // fermer poignée http://iotserver.univ-brest.fr/robot.php?x1=0&x2=0&x3=0
+        }*/
+   }
+
+    
     
     public void OpenHand(Controller controller, HttpConection objHttp) {
     	Frame frame = controller.frame();

@@ -6,5 +6,4 @@ public class Main {
 		SampleListener objListen = new SampleListener();
 		
 	}
-
 }
