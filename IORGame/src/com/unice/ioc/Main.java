@@ -13,7 +13,7 @@ public class Main {
 
         Win.addKeyListener(commandes);
         Win.setResizable(false);
-        Win.setSize(900, 600);
+        Win.setSize(300, 200);
         Win.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Win.setVisible(true);
     }
