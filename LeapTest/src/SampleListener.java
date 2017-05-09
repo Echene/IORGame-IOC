@@ -36,23 +36,58 @@ public class SampleListener extends Listener {
         Vector speed = pointable.tipVelocity();
         float touchDistance = pointable.touchDistance();
         Pointable.Zone zone = pointable.touchZone();
+        
+        Hand handRight = frame.hands().rightmost();
+		Hand handLeft = frame.hands().leftmost();
 
+		Commandes objHttp = new Commandes();
         //HttpConection objHttp = new HttpConection();
+		
+		try{
+			if (frame.hands().count() != 0)
+			{
+				TimeUnit.SECONDS.sleep(1);
+				if(handRight.palmPosition().getZ() > 5)
+				{
+					objHttp.SendCommande("RECULER");
+					System.out.println("Reculer");
+				}
+				else if(handRight.palmPosition().getZ() < -5)
+				{
+					objHttp.SendCommande("AVANCER");
+					System.out.println("Avancer");
+				}
+				else if(handRight.palmPosition().getZ() == 0)
+				{
+					System.out.println("Rien");
+				}
+				
+				 if (pointable.isExtended() == true) {
+					 objHttp.SendCommande("OUVRIR");
+			    	   System.out.println("Poignée ouvert");
+				 }else if (pointable.isExtended() == false){
+					 objHttp.SendCommande("FERMER");
+			    	   System.out.println("Poignée fermer");
+				 }	
+				 if(handRight.palmPosition().getY() > 100.000){ 
+					 objHttp.SendCommande("MONTER");
+					 System.out.println("hauteur main  : haut");
+				 }else if(handRight.palmPosition().getY() < 100.000 && handRight.palmPosition().getY() > 0.000){
+					 objHttp.SendCommande("DESCENDRE");
+					 System.out.println("hauteur main  : bas");
+				 }
+			}
+		}catch(Exception e){
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
 
-        /*
-        System.out.println("Frame id: " + frame.id()
-                       + ", Timestamp: " + frame.timestamp()
-                       + ", Hands: " + frame.hands().count()
-                       + ", Fingers: " + frame.fingers().count()
-                       + ", Palm: " + pointable.isExtended()
-                       + ", Left: " + hand.isLeft()
-                       + ", Right: " + hand.isRight()
-                       + ", Direction " + hand.direction());
-                       //+ ", left: " + leftmost);*/
+
+         //+ ", left: " + leftmost));
         // Faire un Sleep pour exectuer l'action       
-			
+			/*
         try {
-			TimeUnit.SECONDS.sleep(3);
+			TimeUnit.SECONDS.sleep(2);
 			 HttpConection objHttp = new HttpConection();
 		        if (pointable.isExtended() == true) {
 		    	   System.out.println("Poignée ouvert");  	  
@@ -74,8 +109,36 @@ public class SampleListener extends Listener {
 			}catch (Exception e) {
 				// TODO: handle exception
 			} 
-
-	       
+*/
+     // UTILISER THREAD
+        // BAISSER/MONTER LE BRAS
+        /*
+        try {
+			TimeUnit.SECONDS.sleep(1);
+			 HttpConection objHttp = new HttpConection();
+			 if(handRight.palmPosition().getY() > 100.000){
+					System.out.println("hauteur main  : haut");
+			    	   try {
+			    		   // Envoie la commande main levé
+							objHttp.sendPost("http://iotserver.univ-brest.fr/robot.php", "?x1=0&x2=1&x3=1");
+							} catch (Exception e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}		
+				 }else if(handRight.palmPosition().getY() < 100.000 && handRight.palmPosition().getY() > 0.000){
+						System.out.println("hauteur main  : bas");
+				    	   try {
+				    		   // Envoie la commande main baissé
+								objHttp.sendPost("http://iotserver.univ-brest.fr/robot.php", "?x1=1&x2=1&x3=1");
+								} catch (Exception e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}	
+				 }
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
+	       */
 
         /*
         while(pointable.isExtended() == false)
