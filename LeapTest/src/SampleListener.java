@@ -80,8 +80,14 @@ public class SampleListener extends Listener {
 		}catch(Exception e){
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}	
-
+		}
+		/*
+		System.out.println("Frame id: " + frame.id()
+        + ", Hands: " + frame.hands().count()
+         + ", Fingers: " + frame.fingers().count()
+         + ", Palm: " + pointable.isExtended()
+         + ", Left: " + hand.isLeft()
+         + ", Right: " + hand.isRight());*/
 
          //+ ", left: " + leftmost));
         // Faire un Sleep pour exectuer l'action       
