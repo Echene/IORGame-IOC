@@ -1,6 +1,10 @@
+Lien de la présentation:
+https://docs.google.com/presentation/d/1_ueBVpn8V_FPufs9xBFdfAKeoA5UjoBE0kfD0lTpIGk/edit?ts=58be7529#slide=id.g223c63d58b_0_0
+
+
 Webcam - http://iorgame.com/v/
 
-Interface contr�le:
+Interface contrôle:
 http://pagesperso.univ-brest.fr/~bounceur/led/
 Identifiant: aaaa
 Mot de passe : bbbb
