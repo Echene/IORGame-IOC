@@ -2,5 +2,5 @@
 
 # Chêne Emmanuel
 # Sethi Harshil
-# Mkenini Isma
+# Mkenini Ismael
 # Adlal Mohammed-medhi
